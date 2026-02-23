@@ -13,30 +13,43 @@ Analyze competitor quiz funnels with comprehensive reporting.
 ```
 /analyze-quiz <quiz-url>
 /analyze-quiz <quiz-url> --name "CompanyName"
+/analyze-quiz <quiz-url> --format json
+/analyze-quiz <quiz-url> --mobile-only
+/analyze-quiz <url1> <url2> --compare
 ```
 
-**What it does:**
+**Flags:**
 
-- Navigates through the entire quiz funnel automatically
-- Captures screenshots of every screen
-- Analyzes quiz structure, personalization tactics, and paywall design
-- Identifies psychological tactics and conversion techniques
-- Generates a detailed markdown report with strengths/weaknesses
+| Flag              | Description                           |
+| ----------------- | ------------------------------------- |
+| `--name "Name"`   | Override company name                 |
+| `--format <type>` | Output: `md`, `json`, `csv`, `html`   |
+| `--mobile-only`   | Mobile viewport only (390x844)        |
+| `--desktop-only`  | Desktop viewport only (1280x800)      |
+| `--compare`       | Compare multiple quizzes side-by-side |
+
+**Features:**
+
+- Dual viewport capture (desktop + mobile) by default
+- Smart obstacle handling (cookie banners, popups, slow pages)
+- Multiple export formats (Markdown, JSON, CSV, HTML)
+- Competitor comparison mode
+- Resume capability for interrupted analysis
+
+**What it analyzes:**
+
+- Quiz structure and flow
+- Personalization tactics
+- Paywall and pricing strategy
+- Psychological triggers
+- Mobile experience differences
+- Strengths and weaknesses
 
 **Output:**
 
-- Screenshots saved to `~/Downloads/quiz-analysis-[name]-[timestamp]/`
-- Full analysis report at `~/Downloads/quiz-analysis-[name]-[timestamp].md`
-
-**Report includes:**
-
-- Executive summary
-- Screen-by-screen breakdown with screenshots
-- Personalization strategy analysis
-- Paywall & offer analysis
-- Psychological tactics identified
-- Strengths and weaknesses
-- Actionable takeaways
+- Screenshots: `~/Downloads/quiz-analysis-[name]-[timestamp]/`
+- Report: `~/Downloads/quiz-analysis-[name]-[timestamp].[format]`
+- Comparison: `~/Downloads/quiz-comparison-[timestamp].md`
 
 ## Requirements
 
@@ -45,8 +58,7 @@ Analyze competitor quiz funnels with comprehensive reporting.
 
 ## Installation
 
-1. Clone this repo or add it to your Claude Code skills directory
-2. Ensure the skill is symlinked or accessible to Claude Code
+Add this repo to your Claude Code skills directory or symlink the skill folder.
 
 ## License
 
